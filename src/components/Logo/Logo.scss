@@ -1,0 +1,33 @@
+.logo {
+  color: #f7f7f7;
+  font-family: Kristi,cursive;
+  font-weight: 400;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 10;
+  display: block;
+  padding-top: 20px;
+
+  &__cracker {
+    font-size: 60px;
+    line-height: 60.96px;
+
+    &--black {
+      color: #333333;
+    }
+  }
+
+  &__text {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    position: absolute;
+    right: -15px;
+    bottom: -5px;
+
+    &--none {
+      display: none;
+    }
+  }
+}

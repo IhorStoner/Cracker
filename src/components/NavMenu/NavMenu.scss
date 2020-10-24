@@ -1,0 +1,57 @@
+
+.navMenu {
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24), 0 0 4px rgba(0, 0, 0, 0.12);
+    background-color: #333333;
+    opacity: 0.56;
+  }
+
+
+  &__container {
+    width: 920px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    text-align: right;
+  }
+
+  &__link {
+    color: #f7f7f7;
+    font-family: "Fredoka One";
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 30px 15px 30px;
+    position: relative;
+
+    &--active {
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 4px;
+        background-color: #ff4200;
+        opacity: 1;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+}

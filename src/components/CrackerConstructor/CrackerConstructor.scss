@@ -1,0 +1,247 @@
+.crackerConstructor {
+  margin-top: 150px;
+
+  &__title {
+    color: #333333;
+    font-family: "Fredoka One";
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 9.6px;
+    margin-bottom: 85px;
+  }
+
+  &__valueContainer {
+    color: #333333;
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 36px;
+    margin: 0 auto;
+    text-align: right;
+    text-transform: uppercase;
+    max-width: 622px;
+  }
+
+  &__value {
+    font-family: "Lato - Regular";
+    font-size: 30px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+  }
+}
+
+.constructor {
+  
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__btnContainer {
+    margin-top: 10px;
+    position: relative;
+    max-width: 200px;
+
+
+    &:hover .constructor__subBtnCheckout {
+      display: block;
+    }
+
+    &:hover .constructor__btnCheckout {
+      opacity: 0;
+      transition: 0.5s;
+    }
+  }
+  
+  &__slider {
+    width: 620px;
+    height: 4px;
+    border-radius: 20px;
+    position: relative;
+    appearance: none;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+    background: transparent;
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      cursor: pointer;
+      overflow: hidden;
+      background: #efedeb;
+    }
+
+    &--soybean {
+      background: #00a651;
+
+      &::-webkit-slider-thumb {
+        border: 2px solid #00a651;
+      }
+    }
+
+    &--sesame {
+      background: #49743f;
+
+      &::-webkit-slider-thumb {
+        border: 2px solid #49743f;
+      }
+    }
+
+    &--wheat {
+      background: #aba000;
+
+      &::-webkit-slider-thumb {
+        border: 2px solid #aba000;
+      }
+    }
+
+    &--corn {
+      background: #333333;
+
+      &::-webkit-slider-thumb {
+        border: 2px solid #333333;  
+      }
+    }
+  }
+
+  &__sliderContainer {
+    position: relative;
+  }
+
+  &__sliderLine {
+   
+    position: absolute;
+    height: 2px;
+    left: 0;
+    right: 10;
+    background: #333333;
+  }
+
+  &__percent {
+    min-width: 76px;
+    color: #333333;
+    font-family: Lato;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__choosePack {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 540px;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 20px;
+      height: 11px;
+      display: block;
+      background-image: url('../../assets/svg/arrowDown.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      position: absolute;
+      z-index: 10;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 35px;
+    }
+  }
+
+  &__packList {
+    appearance: none;
+    padding: 9px 78px;
+    border-radius: 30px;
+    border: 1px solid #ff4200;
+    color: #ff4200;
+    font-family: "Fredoka One";
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+
+    &__option {
+      color: #ff4200;
+      font-family: "Fredoka One";
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 40px;
+      text-align: center;
+      text-transform: uppercase;
+      outline: none;
+      cursor: pointer;
+      border-top: 1px solid red;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__btnCheckout {
+    display: block;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.24), 0 0 6px rgba(0, 0, 0, 0.12);
+    background-color: #ff4200;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    background-image: url('../../assets/svg/plus.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin-left: 750px;
+  }
+
+  &__subBtnCheckout {
+    display: none;
+    padding: 10px 10px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.24), 0 0 6px rgba(0, 0, 0, 0.12);
+    border-radius: 40px;
+    background-color: #ff4200;
+    color: #ffffff;
+    font-family: "Fredoka One";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin-left: 750px;
+    animation: btnAddToCart 1s;
+    position: absolute;
+    top: 0;
+  }
+}
+
+@keyframes btnAddToCart {
+  from {
+    left: 50px;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}

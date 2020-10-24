@@ -1,0 +1,67 @@
+.cartItem {
+  border-bottom: 1px solid #ccc;
+  max-width: 500px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  position: relative;
+  padding-left: 5px;
+
+  &::before {
+    content: '';
+    display: block;
+    height: 26px;
+    width: 26px;
+    background-image: url('../../assets/svg/semen.svg');
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    left: -35px;
+  }
+
+  &__btn {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid #000;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    right: -60px;
+    background-image: url('../../assets/png/delete.png');
+    background-position: center;
+    background-size: 35%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:hover {
+      transform: rotate(180deg);
+      transition: 1s;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item {
+    color: #FF8000;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 28px;
+    letter-spacing: 0.36px;
+
+    &--black {
+      color: #000;
+      font-family: Lato;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}

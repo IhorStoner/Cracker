@@ -1,0 +1,18 @@
+$font-family: Kristi;
+
+.container {
+  max-width: 910px;
+  margin: 0 auto;
+  
+}
+
+.header {
+  background-color: #333333;
+  
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    max-height: 60px;
+  }
+}
