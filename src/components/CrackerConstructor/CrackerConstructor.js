@@ -58,22 +58,22 @@ export default function CrackerConstructor() {
 
       <div className='crackerConstructor__app constructor'>
         <div className='constructor__soybean constructor__item'>
-          <img src={soybean}/>
+          <img src={soybean} alt='soybean'/>
           <input className='constructor__slider constructor__slider--soybean' type="range" min="0" max="100" step="1" value={soybeanCount}  onChange={setIfLTEMax(100, soybeanCount, setSoybeanCount)}></input>
           <span className='constructor__percent'>{soybeanCount}%</span>
         </div>
         <div className='constructor__sesame constructor__item'>
-          <img src={sesame}/>
+          <img src={sesame} alt='sesame'/>
           <input className='constructor__slider constructor__slider--sesame' type="range" min="0" max="100" step="1" value={sesameCount}  onChange={setIfLTEMax(100, sesameCount, setSesameCount)}></input>
           <span className='constructor__percent'>{sesameCount}%</span>
         </div>
         <div className='constructor__wheat constructor__item'>
-          <img src={wheat}/>
+          <img src={wheat} alt='wheat'/>
           <input className='constructor__slider constructor__slider--wheat' type="range" min="0" max="100" step="1" value={wheatCount}  onChange={setIfLTEMax(100, wheatCount, setWheatCount)}></input>
           <span className='constructor__percent'>{wheatCount}%</span>
         </div>
         <div className='constructor__corn constructor__item'>
-          <img src={corn}/>
+          <img src={corn} alt='corn'/>
           <div className='constructor__sliderContainer'>
             <span className='constructor__sliderLine--left constructor__sliderLine'/>
             <input className='constructor__slider constructor__slider--corn' type="range" min="0" max="100" step="1" value={cornCount}></input>

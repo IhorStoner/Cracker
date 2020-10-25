@@ -38,6 +38,10 @@
 }
 
 .constructor {
+
+  &__btns {
+    margin-top: 10px;
+  }
   
   &__item {
     display: flex;
@@ -47,9 +51,9 @@
   }
 
   &__btnContainer {
-    margin-top: 10px;
     position: relative;
     max-width: 200px;
+    margin-left: auto;
 
 
     &:hover .constructor__subBtnCheckout {
@@ -209,7 +213,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto;
-    margin-left: 750px;
   }
 
   &__subBtnCheckout {
@@ -228,10 +231,10 @@
     border: none;
     cursor: pointer;
     outline: none;
-    margin-left: 750px;
     animation: btnAddToCart 1s;
     position: absolute;
     top: 0;
+    left: 0;
   }
 }
 

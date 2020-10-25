@@ -36,10 +36,10 @@ export default function Cart() {
         <div className='cart__details'>Details </div>
         <div className='cartDetails'>
           <div className='cartDetails__iconsContainer'>
-            <img src={soybean} className='cartDetails__icon'></img>
-            <img src={sesame} className='cartDetails__icon'></img>
-            <img src={wheat} className='cartDetails__icon'></img>
-            <img src={corn} className='cartDetails__icon'></img>
+            <img src={soybean} className='cartDetails__icon' alt='soybean'/>
+            <img src={sesame} className='cartDetails__icon' alt='sesame'/>
+            <img src={wheat} className='cartDetails__icon' alt='wheat'/>
+            <img src={corn} className='cartDetails__icon' alt='corn'/>
           </div>
           <div className='cartDetails__items'>
             {
