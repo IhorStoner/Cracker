@@ -107,7 +107,7 @@ export default function CrackerConstructor() {
         <div className='constructor__btns'>
           <div className='constructor__btnContainer'>
             <button className='constructor__btnCheckout'/>
-            <button className='constructor__subBtnCheckout' onClick={sum !== 0 ? () => dispatch(addProductToCart(product)) : null}>Add to Cart</button>
+            <button className='constructor__subBtnCheckout' onClick={price !== '0' ? () => dispatch(addProductToCart(product)) : null}>Add to Cart</button>
           </div>
         </div>
       </div>
