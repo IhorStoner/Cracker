@@ -14,9 +14,12 @@ export default function CrackerConstructor() {
   const [ sesameCount, setSesameCount ] = useState(0);
   const [ wheatCount, setWheatCount ] = useState(0);
   const [ cornCount, setCornCount ] = useState(0);
+  const [ weigth, setWeigth ] = useState('none');
   const [ product, setProduct ] = useState({});
+  const [ isChange, setIsChange ] = useState(false)
+  const [ price, setPrice ] = useState('0');
   const dispatch = useDispatch();
-
+  
   const sum = useMemo(() => +soybeanCount + +sesameCount + +wheatCount, [soybeanCount, sesameCount, wheatCount])
   const setIfLTEMax = (max, current, setState) => e => {
     const delta = e.target.value - current;
@@ -24,20 +27,23 @@ export default function CrackerConstructor() {
   }
 
   useEffect(() => {
-    setCornCount(100 - sum)
-
-    const weigth = document.getElementById('packList').value
-    const price = () => {
+    isChange ? setCornCount(100 - sum) : setCornCount(0)
+    setIsChange(true)
+    
+    setPrice(() => {
       let price;
       if(weigth === '0.50') {
         price = '28.50';
       } else if (weigth === '50') {
         price = '50.5'
-      } else {
+      } else if (weigth ==='150'){
         price = '81.50'
+      } else {
+        price = '0'
       }
       return price;
-    }
+    })
+
     setProduct(
       {
         id: Date.now(),
@@ -45,16 +51,16 @@ export default function CrackerConstructor() {
         sesame: sesameCount,
         wheat: wheatCount,
         corn: cornCount,
-        weigth: weigth ? weigth : '0.50',
-        price: price(),
+        weigth: weigth,
+        price: price,
       }
     )
-  }, [soybeanCount, sesameCount, wheatCount])
+  }, [soybeanCount, sesameCount, wheatCount, weigth])
 
   return (
     <div className='crackerConstructor'>
       <h2 className='crackerConstructor__title'>Cracker Constructor</h2>
-      <p className='crackerConstructor__valueContainer'>Current value: <span className='crackerConstructor__value'>0</span>{'\u20AC'}</p>
+      <p className='crackerConstructor__valueContainer'>Current value: <span className='crackerConstructor__value'>{price}</span>{'\u20AC'}</p>
 
       <div className='crackerConstructor__app constructor'>
         <div className='constructor__soybean constructor__item'>
@@ -83,11 +89,11 @@ export default function CrackerConstructor() {
         </div>
         <div className='constructor__choosePack'>
           <img src={pacage}/>
-          <select name='pack' className='constructor__packList' id='packList'>
-            <option value='0.50' className='constructor__packList__option' disabled>
+          <select name='pack' value={weigth} onChange={(e) => setWeigth(e.target.value)} className='constructor__packList' id='packList'>
+            <option value='none'  className='constructor__packList__option' disabled>
               Choose your pack
             </option>
-            <option value='0.50' className='constructor__packList__option' selected>
+            <option value='0.50' className='constructor__packList__option'>
               Small pack
             </option >
             <option value='50' className='constructor__packList__option'>
